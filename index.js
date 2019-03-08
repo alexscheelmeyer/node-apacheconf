@@ -117,6 +117,8 @@ Parser.prototype.write = function(line) {
       , self = this
     this._child = child
     child._parent = this
+    child._stream = this._stream
+    child.file = this.file
 
     function onerror(err) {
       self.emit('error', err)
